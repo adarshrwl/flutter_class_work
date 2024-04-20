@@ -14,7 +14,6 @@ class _ArithmeticScreenState extends State<AddTwoNums> {
   int? second;
   int result = 0;
 
-
   AddTwoNumbersModel? addTwoNumsModel;
   @override
   Widget build(BuildContext context) {

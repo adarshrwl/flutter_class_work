@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/model/rectangle_model.dart';
 
@@ -12,7 +14,7 @@ class _RectangleAreaState extends State<RectangleArea> {
   double? length;
   double? breadth;
   double? area;
-
+  final myKey = GlobalKey<FormState>();
   RectangleModel? rectangleModel;
   @override
   Widget build(BuildContext context) {
@@ -27,9 +29,16 @@ class _RectangleAreaState extends State<RectangleArea> {
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: Form(
+          key: myKey,
           child: Column(
             children: [
               TextFormField(
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Enter Length of Rectangle';
+                  }
+                  return null;
+                },
                 onChanged: (value) {
                   length = double.parse(value);
                 },
@@ -41,6 +50,13 @@ class _RectangleAreaState extends State<RectangleArea> {
                 height: 8,
               ),
               TextFormField(
+                validator: (value) {
+                  if (value == null) {
+                    return ("Please Input breadth of the Rectangle");
+                  } else {
+                    return (null);
+                  }
+                },
                 onChanged: (value) {
                   breadth = double.parse(value);
                 },
@@ -55,11 +71,13 @@ class _RectangleAreaState extends State<RectangleArea> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      rectangleModel =
-                          RectangleModel(length: length, breadth: breadth);
-                      area = rectangleModel?.calculateArea();
-                    });
+                    if (myKey.currentState!.validate()) {
+                      setState(() {
+                        rectangleModel =
+                            RectangleModel(length: length, breadth: breadth);
+                        area = rectangleModel?.calculateArea();
+                      });
+                    }
                   },
                   child: const Text("Calculate Area"),
                 ),

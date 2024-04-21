@@ -52,7 +52,7 @@ class _AreaOState extends State<AreaO> {
               ElevatedButton(
                 onPressed: () {
                   if (myKey.currentState!.validate()) {
-                    setState(() {
+                   setState(() {
                       circleModel = CircleModel(radius: radius!);
                       area = circleModel?.calcCircle();
                     });

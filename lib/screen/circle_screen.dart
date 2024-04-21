@@ -33,9 +33,14 @@ class _AreaOState extends State<AreaO> {
             children: [
               TextFormField(
                 decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Enter  Amount',
-                ),
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter  Amount',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green),
+                    )),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -52,7 +57,7 @@ class _AreaOState extends State<AreaO> {
               ElevatedButton(
                 onPressed: () {
                   if (myKey.currentState!.validate()) {
-                   setState(() {
+                    setState(() {
                       circleModel = CircleModel(radius: radius!);
                       area = circleModel?.calcCircle();
                     });

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_application/model/mathematics_model.dart';
 
 class Mathematical extends StatefulWidget {
@@ -21,12 +19,12 @@ class _MathematicalState extends State<Mathematical> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Adarsh Rawal"),
+        title: const Text("Divash Bhattarai"),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 68, 157, 230),
         elevation: 0,
       ),
-      backgroundColor: Colors.amber[100],
+      backgroundColor: const Color.fromARGB(255, 255, 253, 247),
       body: Form(
         key: myKey,
         child: Column(
@@ -136,7 +134,7 @@ class _MathematicalState extends State<Mathematical> {
               width: double.infinity,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: const Color.fromARGB(255, 230, 241, 249),
                   ),
                   onPressed: () {
                     if (myKey.currentState!.validate()) {
@@ -163,7 +161,11 @@ class _MathematicalState extends State<Mathematical> {
             const SizedBox(
               height: 8,
             ),
-            Text("Value is $result")
+            Text(
+              "Value is $result",
+              style:
+                  const TextStyle(fontSize: 30, backgroundColor: Color.fromARGB(255, 234, 201, 104)),
+            )
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class RadioButtonTry extends StatefulWidget {
   const RadioButtonTry({super.key});
@@ -8,7 +9,7 @@ class RadioButtonTry extends StatefulWidget {
 }
 
 class _RadioButtonTryState extends State<RadioButtonTry> {
-  int value = 0;
+  int _value = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,65 +22,96 @@ class _RadioButtonTryState extends State<RadioButtonTry> {
         elevation: 0,
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          TextFormField(
-            decoration: const InputDecoration(border: OutlineInputBorder()),
-            keyboardType: TextInputType.number,
-            
-          ),
-          const SizedBox(
-            height: 9,
-          ),
-          TextFormField(
-            decoration: const InputDecoration(border: OutlineInputBorder()),
-            keyboardType: TextInputType.number,
-          ),
-          Row(
-            children: [
-              Radio(
-                  value: 1,
-                  groupValue: 1,
-                  onChanged: (value) {
-                    value = value;
-                  }),
-              const Text("Number 1")
-            ],
-          ),
-          Row(
-            children: [
-              Radio(
-                  value: 2,
-                  groupValue: 1,
-                  onChanged: (value) {
-                    value = value;
-                  }),
-              const Text("Number 2")
-            ],
-          ),
-          Row(
-            children: [
-              Radio(
-                  value: 3,
-                  groupValue: 1,
-                  onChanged: (value) {
-                    value = value;
-                  }),
-              const Text("Number 3")
-            ],
-          ),
-          Row(
-            children: [
-              Radio(
-                  value: 4,
-                  groupValue: 1,
-                  onChanged: (value) {
-                    value = value;
-                  }),
-              const Text("Number 4")
-            ],
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 8,
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                  labelText: "Enter First Number",
+                  border: OutlineInputBorder(),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red))),
+            ),
+            const SizedBox(
+              height: 9,
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "Enter second number",
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red))),
+              keyboardType: TextInputType.number,
+            ),
+            Row(
+              children: [
+                Radio(
+                    value: 1,
+                    groupValue: _value,
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value!;
+                      });
+                    }),
+                const Text("Number 1")
+              ],
+            ),
+            Row(
+              children: [
+                Radio(
+                    value: 2,
+                    groupValue: _value,
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value!;
+                      });
+                    }),
+                const Text("Number 2")
+              ],
+            ),
+            Row(
+              children: [
+                Radio(
+                    value: 3,
+                    groupValue: _value,
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value!;
+                      });
+                    }),
+                const Text("Number 3")
+              ],
+            ),
+            Row(
+              children: [
+                Radio(
+                    value: 4,
+                    groupValue: _value,
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value!;
+                      });
+                    }),
+                const Text("Number 4"),
+              ],
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue[100]),
+                  child: const Text("Calculate")),
+            ),
+            Text(
+              "The number you have selected is $_value",
+            )
+          ],
+        ),
       ),
     );
   }

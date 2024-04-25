@@ -19,12 +19,12 @@ class _MathematicalState extends State<Mathematical> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Divash Bhattarai"),
+        title: const Text("Adarsh Rawal"),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 68, 157, 230),
+        backgroundColor: Colors.blue,
         elevation: 0,
       ),
-      backgroundColor: const Color.fromARGB(255, 255, 253, 247),
+      backgroundColor: Colors.amber[100],
       body: Form(
         key: myKey,
         child: Column(
@@ -134,7 +134,7 @@ class _MathematicalState extends State<Mathematical> {
               width: double.infinity,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 230, 241, 249),
+                    backgroundColor: Colors.blue,
                   ),
                   onPressed: () {
                     if (myKey.currentState!.validate()) {
@@ -164,7 +164,7 @@ class _MathematicalState extends State<Mathematical> {
             Text(
               "Value is $result",
               style:
-                  const TextStyle(fontSize: 30, backgroundColor: Color.fromARGB(255, 234, 201, 104)),
+                  const TextStyle(fontSize: 30, backgroundColor: Colors.amber),
             )
           ],
         ),

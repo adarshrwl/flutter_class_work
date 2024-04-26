@@ -3,6 +3,7 @@ import 'package:flutter_application/screen/circle_screen.dart';
 import 'package:flutter_application/screen/col.dart';
 import 'package:flutter_application/screen/container_learn_screen.dart';
 import 'package:flutter_application/screen/dashboard_screen.dart';
+import 'package:flutter_application/screen/flexible_expanded_screen.dart';
 import 'package:flutter_application/screen/flutter_layout_screen.dart';
 import 'package:flutter_application/screen/mathematical_screen.dart';
 import 'package:flutter_application/screen/radio_button_learn.dart';
@@ -15,7 +16,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ContainerScreen(),
+      home: FlexibleExpandedScreen(),
     );
   }
 }

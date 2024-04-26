@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -14,27 +15,24 @@ class FlexibleExpandedScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            alignment: Alignment.center,
-            color: Colors.amber[100],
-            height: 600,
-            width: double.infinity,
-            child: const Text(
-              "Container 1",
-              style: TextStyle(color: Colors.black, fontSize: 30),
-            ),
-          ),
           Flexible(
+            fit: FlexFit.loose,
             child: Container(
-              alignment: Alignment.center,
-              color: Colors.redAccent,
-              height: 600,
-              width: double.infinity,
-              child: const Text(
-                "Container 2",
-                style: TextStyle(fontSize: 30),
-              ),
-            ),
+                alignment: Alignment.center,
+                color: Colors.amber[100],
+                height: 400,
+                width: double.infinity,
+                child: ElevatedButton(
+                    onPressed: () {}, child: Text("Container 1"))),
+          ),
+          Expanded(
+            child: Container(
+                alignment: Alignment.center,
+                color: Colors.redAccent,
+                height: 200,
+                width: double.infinity,
+                child: ElevatedButton(
+                    onPressed: () {}, child: Text("Container 2"))),
           )
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application/common/snackbar/my_snackbar.dart';
 
 class FlexibleExpandedScreen extends StatelessWidget {
   const FlexibleExpandedScreen({super.key});
@@ -24,14 +25,10 @@ class FlexibleExpandedScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text("Hello World"),
-                        duration: Duration(seconds: 3),
-                        backgroundColor: Colors.green,
-                        behavior: SnackBarBehavior.floating,
-                      ),
-                    );
+                    showMySnackbar(
+                        messgae: "Hello World",
+                        context: context,
+                        color: Colors.green);
                   },
                   child: const Text("Container 1"),
                 )),
@@ -44,14 +41,10 @@ class FlexibleExpandedScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text("Hello World"),
-                          duration: Duration(seconds: 3),
-                          backgroundColor: Colors.blue,
-                          behavior: SnackBarBehavior.floating,
-                        ),
-                      );
+                      showMySnackbar(
+                          messgae: "Hello World",
+                          context: context,
+                          color: Colors.red);
                     },
                     child: const Text("Container 2"))),
           )

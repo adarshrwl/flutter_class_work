@@ -23,7 +23,18 @@ class FlexibleExpandedScreen extends StatelessWidget {
                 height: 400,
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {}, child: Text("Container 1"))),
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text("Hello World"),
+                        duration: Duration(seconds: 3),
+                        backgroundColor: Colors.green,
+                        behavior: SnackBarBehavior.floating,
+                      ),
+                    );
+                  },
+                  child: const Text("Container 1"),
+                )),
           ),
           Expanded(
             child: Container(
@@ -32,7 +43,17 @@ class FlexibleExpandedScreen extends StatelessWidget {
                 height: 200,
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {}, child: Text("Container 2"))),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Hello World"),
+                          duration: Duration(seconds: 3),
+                          backgroundColor: Colors.blue,
+                          behavior: SnackBarBehavior.floating,
+                        ),
+                      );
+                    },
+                    child: const Text("Container 2"))),
           )
         ],
       ),

@@ -15,10 +15,22 @@ class ListTileScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            for (int i = 0; i < 20; i++) CommonListTile(index: i),
+            // for (int i = 0; i < 20; i++) CommonListTile(index: i, imageName: "image1",),
             for (int i = 0; i < 10; i++)
               if (i % 2 == 0) ...{
-                ...{CommonListTile(index: i)}
+                ...{
+                  CommonListTile(
+                    index: i,
+                    imageName: "image1",
+                  )
+                }
+              } else ...{
+                ...{
+                  CommonListTile(
+                    index: i,
+                    imageName: "image2",
+                  )
+                }
               }
           ],
         ),

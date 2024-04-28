@@ -14,7 +14,13 @@ class ListTileScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [for (int i = 0; i < 20; i++) CommonListTile(index: i)],
+          children: [
+            for (int i = 0; i < 20; i++) CommonListTile(index: i),
+            for (int i = 0; i < 10; i++)
+              if (i % 2 == 0) ...{
+                ...{CommonListTile(index: i)}
+              }
+          ],
         ),
       ),
     );

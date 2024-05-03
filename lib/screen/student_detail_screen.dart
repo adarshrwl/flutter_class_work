@@ -4,13 +4,14 @@ import 'package:flutter_application/model/student_detail.dart';
 
 class StudentDetail extends StatefulWidget {
   const StudentDetail({super.key});
-
+  
   @override
   State<StudentDetail> createState() => _StudentDetalState();
 }
 
 class _StudentDetalState extends State<StudentDetail> {
   List<StudentDetailModel> studentDetailsList = [];
+  
 
   StudentDetailModel? studentDetailModel;
   String? firstName;
@@ -25,7 +26,7 @@ class _StudentDetalState extends State<StudentDetail> {
         title: const Text(
           "Student Detail",
         ),
-        backgroundColor: Colors.purple[200],
+        backgroundColor: const Color.fromARGB(255, 208, 112, 225),
         centerTitle: true,
         elevation: 0,
       ),

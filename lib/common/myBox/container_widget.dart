@@ -10,3 +10,20 @@ Widget myBox(int index) {
     child: Text('$index'),
   );
 }
+
+Widget myButton(int index) {
+  return Container(
+    decoration: BoxDecoration(
+      color: Color.fromARGB(255, 255, 255, 255),
+      borderRadius: BorderRadius.circular(30),
+    ),
+    child: ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        backgroundColor: const Color.fromARGB(255, 255, 228, 146),
+      ),
+      child: const Text("1"),
+    ),
+  );
+}

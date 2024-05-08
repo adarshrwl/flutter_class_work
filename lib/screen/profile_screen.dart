@@ -6,12 +6,39 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Profile Screen"),
-        centerTitle: true,
-        backgroundColor: Colors.blue[100],
-      ),
-      body: const Text("Hello This is my Profile"),
-    );
+        appBar: AppBar(
+          title: const Text("Profile Screen"),
+          centerTitle: true,
+          backgroundColor: Colors.blue[100],
+        ),
+        body: Stack(
+          children: [
+            Container(
+              height: 400,
+              width: double.infinity,
+              color: Colors.amber[100],
+              child: const Text("First Container"),
+            ),
+            Positioned(
+              top: 1,
+              right: 1,
+              child: Container(
+                height: 100,
+                width: 100,
+                color: Colors.green,
+                child: const Text("Second Container"),
+              ),
+            ),
+            Positioned(
+                bottom: 1,
+                left: 1,
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.blue[100],
+                  child: const Text("Bottom left"),
+                ))
+          ],
+        ));
   }
 }

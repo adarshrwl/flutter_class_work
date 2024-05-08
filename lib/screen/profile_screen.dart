@@ -12,6 +12,7 @@ class ProfileScreen extends StatelessWidget {
           backgroundColor: Colors.blue[100],
         ),
         body: Stack(
+          clipBehavior: Clip.none,
           children: [
             Container(
               height: 400,
@@ -30,8 +31,8 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-                bottom: 1,
-                left: 1,
+                bottom: -30,
+                left: 400 / 2 - 50,
                 child: Container(
                   height: 100,
                   width: 100,

@@ -9,6 +9,7 @@ import 'package:flutter_application/screen/flutter_layout_screen.dart';
 import 'package:flutter_application/screen/grid_view_screen.dart';
 import 'package:flutter_application/screen/list_tile_screen.dart';
 import 'package:flutter_application/screen/mathematical_screen.dart';
+import 'package:flutter_application/screen/profile_screen.dart';
 import 'package:flutter_application/screen/radio_button_learn.dart';
 import 'package:flutter_application/screen/rectangle_screen.dart';
 import 'package:flutter_application/screen/row_column_screen.dart';
@@ -21,7 +22,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Calculator(),
+      home: ProfileScreen(),
     );
   }
 }

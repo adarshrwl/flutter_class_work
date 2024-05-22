@@ -71,8 +71,7 @@ class _CalculatorPracticeState extends State<CalculatorPractice> {
                 itemCount: lstOperatorNumber.length,
                 itemBuilder: (context, index) {
                   return ElevatedButton(
-                    onPressed: () {
-                    },
+                    onPressed: () {},
                     child: Text(
                       lstOperatorNumber[index],
                       style: const TextStyle(fontSize: 30),

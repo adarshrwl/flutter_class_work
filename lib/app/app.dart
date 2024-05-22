@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/screen/calculator.dart';
+import 'package:flutter_application/screen/calculator_screen.dart';
 import 'package:flutter_application/screen/calculator_self.dart';
 import 'package:flutter_application/screen/circle_screen.dart';
 import 'package:flutter_application/screen/col.dart';
@@ -23,7 +24,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CalculatorPractice(),
+      home: CalculatorScreen(),
     );
   }
 }

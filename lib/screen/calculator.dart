@@ -10,9 +10,6 @@ class Calculator extends StatefulWidget {
 
 class _CalculatorState extends State<Calculator> {
   final TextEditingController _numController = TextEditingController();
-  static const mybox = SizedBox(
-    height: 8,
-  );
   final List<String> lstOperatorNumber = [
     "C",
     "*",
